@@ -1,0 +1,36 @@
+*.font:         Hack-Regular:pixelsize=14,xft:Symbola
+*.boldFont:     Hack-Bold:pixelsize=14:weight=bold,xft:Symbola
+*.italicFont:   Hack-RegularOblique:pixelsize=14:slant=italic,xft:Symbola
+*.alpha: 0.8
+URxvt.scrollBar: false
+URxvt.scrollBar_right: false
+URxvt.scrollBar_floating: false
+URxvt.scrollstyle: rxvt
+URxvt.perl-ext-common: default,selection-to-clipboard,pasta,matcher,keyboard-select
+URxvt.keysym.M-u:     perl:url-select:select_next
+URxvt.url-launcher:   /usr/bin/firefox
+URxvt.underlineURLs:  True
+URxvt.matcher.button: 1 
+URxvt.keysym.M-Escape:perl:keyboard-select:activate
+URxvt.keysym.Control-Shift-V:     perl:pasta:paste
+URxvt.keysym.Control-Up:   \033[1;5A
+URxvt.keysym.Control-Down:    \033[1;5B
+URxvt.keysym.Control-Left:    \033[1;5D
+URxvt.keysym.Control-Right:    \033[1;5C
+URxvt.saveLines: 20000000
+URxvt.iso14755: false
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! User: a
+! ------------------------------------------------------------------------------
+! "Color scheme for normal row" Set from: XResources
+rofi.color-normal:                   #150506, #f5dfc4, #150506, #CC682D, #150506
+! "Color scheme for urgent row" Set from: XResources
+rofi.color-urgent:                   #150506, #AC4F24,     #150506, #AC4F24,  #f5dfc4
+! "Color scheme for active row" Set from: XResources
+rofi.color-active:                   #150506, #f5dfc4, #150506, #CC682D, #150506
+! "Color scheme window" Set from: XResources
+rofi.color-window:                   #150506, #150506, #CC682D
+! "Separator style (none, dash, solid)" Set from: Default
+! rofi.separator-style:                dash
+
