@@ -13,7 +13,6 @@ alias lsb="lsblk -o name,size,RM,RO,mountpoint,label"
 alias skolepc="vboxmanage startvm 'SKOLE-PC-Windows 10' &> /dev/null &"
 alias nano="vim"
 alias GITPUSH="git push origin master"
-alias kpi="sudo ip addr add 10.111.111.1/30 dev enp0s31f6 && ssh pi@10.111.111.2"
 function myip {
 	wget "https://www.dnsleaktest.com/" -q -O - | grep '<p class="hello"' -A 1 | cut -d ">" -f2 | cut -d "<" -f1 | sed 's/Hello /WAN IP:   /' | sed 's/from /LOCATION: /'
 }
