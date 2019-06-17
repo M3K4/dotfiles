@@ -17,7 +17,7 @@ set $mod Mod1
 font pango:Hack 8
 
 exec --no-startup-id compton
-exec --no-startup-id bash /home/a/.config/scripts/loginscript.sh
+exec --no-startup-id bash ~/.config/scripts/loginscript.sh
 exec --no-startup-id setxkbmap dk
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/chromium-browser'
 exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/thunderbird'
@@ -32,48 +32,19 @@ bindsym --release $mod+Shift+Print exec ~/.config/scripts/screenshot.sh window
 
 
 ## quick terminal
-#er i locin script exec --no-startup-id urxvt -name dropdown &> /dev/null &
 for_window [instance="dropdown"] floating enable;
 for_window [instance="dropdown"] move scratchpad; [instance="dropdown"] scratchpad show; move position center; move scratchpad
 bindsym $mod+q [instance="dropdown"] scratchpad show
 
-#er i login script exec --no-startup-id urxvt -name pulsemixer &> /dev/null &
 for_window [instance="pulsemixer"] floating enable;
 for_window [instance="pulsemixer"] move scratchpad; [instance="pulsemixer"] scratchpad show; move position center; move scratchpad
 bindsym $mod+a [instance="pulsemixer"] scratchpad show
 
-#calculator
-#for_window [instance="bc-calculator"] floating enable;
-#for_window [instance="bc-calculator"] move scratchpad; [instance="bc-calculator"] scratchpad show; move position center; move scratchpad
-#bindsym $mod+c [instance="bc-calculator"] scratchpad show
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
-
 ##gaps
-#for_window [class="^.*"] border pixel 0
-for_window [class="qutebrowser"] border pixel 0
-#for_window [class="qutebrowser" title="Open"] border normal
 for_window [class="Zathura"] border pixel 0
 for_window [class="VirtualBox Machine" title="SKOLE-PC-Windows 10*"] border pixel 0
-#for_window [title="SKOLE-PC-Windows 10 - Settings"] 
-#gaps inner 10
-#gaps outer 10
-#smart_gaps on
-#for_window [class="^.*"] border pixel 2
-# Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use 
-# from the generated scheme.
-# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
-# it fails to get colors from Xresources.
+
+##colors
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 
@@ -99,11 +70,10 @@ bar {
         status_command i3status -c /etc/i3status.conf
         #status_command /home/a/.config/scripts/i3status-fftimer.sh
 }
-# PROTIP: You can also dynamically set dmenu's colors this way:
-#bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+
 bindsym $mod+d exec rofi -show run
 bindsym $mod+l exec betterlockscreen --lock
-bindsym $mod+o exec bash /home/a/.config/scripts/rofimonitor.sh built-in
+bindsym $mod+o exec bash ~/.config/scripts/rofimonitor.sh built-in
 bindsym $mod+p exec rofi -show "Select output mode" -modi "Select output mode":/home/a/.config/scripts/simple_rofi_menu.py
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -236,17 +206,6 @@ bindsym $mod+r mode "resize"
 #	status_command i3status
 #}
 #
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Sreen brightness controls
-#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
-
-# Touchpad controls
-#bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play
