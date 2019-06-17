@@ -2,8 +2,7 @@ export ZSH=/home/a/.oh-my-zsh
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 ZSH_THEME="gentoo"
 ##############
-PATH="${PATH}:${HOME}/.local/bin/"
-PATH="${PATH}:/home/a/.cargo/bin"
+PATH="${PATH}:${HOME}/.local/bin/:${HOME}/.cargo/bin"
 alias U="sudo apt-get update; sudo apt-get dist-upgrade -y; sudo apt-get autoremove --purge -y"
 alias wifi="nmtui-connect"
 alias dropdown="st -n dropdown &> /dev/null &" 
