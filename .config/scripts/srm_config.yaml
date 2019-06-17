@@ -1,0 +1,17 @@
+separator: "----"
+index_start: 1
+index_format: "{item_index}: {item_name}"
+numbered: True
+groups:
+- items:
+  - name: Built-in only
+    command: /home/a/.config/scripts/rofimonitor.sh built-in
+  - name: HDMI and Built-in
+    command: /home/a/.config/scripts/rofimonitor.sh hdmi
+  - name: HDMI only
+    command: /home/a/.config/scripts/rofimonitor.sh only-hdmi
+  - name: VGA and Built-in
+    command: /home/a/.config/scripts/rofimonitor.sh vga
+  - name: VGA only
+    command: /home/a/.config/scripts/rofimonitor.sh only-vga
+

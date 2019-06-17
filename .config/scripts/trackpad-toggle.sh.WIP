@@ -1,0 +1,13 @@
+#!/bin/bash
+source ~/.config/settings.conf
+enable () {
+	ennipple
+	notify-send -t 2000 "Trackpad and nipple enabled"
+	echo 1 > ~/.config/scripts/.tracpad-toggle.status
+}
+disable () {
+        nonipple
+        notify-send -t 2000 "Trackpad and nipple enabled"
+
+}
+
